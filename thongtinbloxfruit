@@ -100,7 +100,6 @@ local quests = {
     [46] = {npc = "Skylands Quest Giver", level = 1600, enemies = {"Angelic Warriors"}, location = "Skylands", position = Vector3.new(2500, 235, 2600)},
     [47] = {npc = "Deep Sea Quest Giver", level = 1650, enemies = {"Sea Monsters"}, location = "Deep Sea", position = Vector3.new(2550, 240, 2650)},
     [48] = {npc = "Deep Sea Quest Giver", level = 1700, enemies = {"Abyss Guardians"}, location = "Deep Sea", position = Vector3.new(2600, 245, 2700)},
-    
     -- Sea 3
     [49] = {npc = "Port Quest Giver", level = 1750, enemies = {"Port Bandits"}, location = "Port Town", position = Vector3.new(2650, 250, 2750)},
     [50] = {npc = "Port Quest Giver", level = 1800, enemies = {"Pirate Raiders"}, location = "Port Town", position = Vector3.new(2700, 255, 2800)},
