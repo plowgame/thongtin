@@ -113,8 +113,7 @@ local quests = {
     [60] = {npc = "Lava Quest Giver", level = 2300, enemies = {"Infernal Beasts"}, location = "Magma Hell", position = Vector3.new(3200, 305, 3300)},
     [61] = {npc = "Sky Fortress Quest Giver", level = 2350, enemies = {"Celestial Soldiers"}, location = "Sky Fortress", position = Vector3.new(3250, 310, 3350)},
     [62] = {npc = "Sky Fortress Quest Giver", level = 2400, enemies = {"Astral Guardians"}, location = "Sky Fortress", position = Vector3.new(3300, 315, 3400)},
-    [63] = {npc = "Void Quest Giver", level = 2450, enemies = {"Void Walkers"}, location = "Void Island", position = Vector3.new(3350, 320, 3450)}
-}
+    [63] = {npc = "Void Quest Giver", level = 2450, enemies = {"Void Walkers"}, location = "Void Island", position = Vector3.new(3350, 320, 3450)},
     [64] = {npc = "Void Quest Giver", level = 2500, enemies = {"Abyssal Beasts"}, location = "Void Island", position = Vector3.new(3400, 325, 3500)},
     [65] = {npc = "Final Quest Giver", level = 2550, enemies = {"Chaos Warriors"}, location = "Final Island", position = Vector3.new(3450, 330, 3550)},
     [66] = {npc = "Final Quest Giver", level = 2600, enemies = {"Godly Guardians"}, location = "Final Island", position = Vector3.new(3500, 335, 3600)}
