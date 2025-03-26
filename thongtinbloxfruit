@@ -79,5 +79,3 @@ local quests = {
     [2450] = {npc = "God Human Trainer", level = 2450, enemies = {"Eternal Guardians", "God Human Trainer"}, location = "Sea of Treats"},
     [2600] = {npc = "Final Boss", level = 2600, enemies = {"Elite Pirates", "Final Boss"}, location = "New World"},
 }
-
-return quests
