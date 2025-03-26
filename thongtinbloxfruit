@@ -1,0 +1,83 @@
+local mobsByLevel = {
+    {level = 1, name = "Bandit", id = 1, position = Vector3.new(100, 10, 200)},
+    {level = 10, name = "Monkey", id = 2, position = Vector3.new(150, 10, 300)},
+    {level = 20, name = "Gorilla", id = 3, position = Vector3.new(200, 10, 400)},
+    {level = 50, name = "Pirate", id = 4, position = Vector3.new(250, 10, 500)},
+    {level = 75, name = "Brute", id = 5, position = Vector3.new(300, 10, 600)},
+    {level = 100, name = "Desert Bandit", id = 6, position = Vector3.new(350, 10, 700)},
+    {level = 120, name = "Desert Officer", id = 7, position = Vector3.new(400, 10, 800)},
+    {level = 150, name = "Snow Bandit", id = 8, position = Vector3.new(450, 10, 900)},
+    {level = 175, name = "Snowman", id = 9, position = Vector3.new(500, 10, 1000)},
+    {level = 190, name = "Chief Petty Officer", id = 10, position = Vector3.new(550, 10, 1100)},
+    {level = 275, name = "Sky Bandit", id = 11, position = Vector3.new(600, 10, 1200)},
+    {level = 300, name = "Dark Master", id = 12, position = Vector3.new(650, 10, 1300)},
+    {level = 325, name = "Toga Warrior", id = 13, position = Vector3.new(700, 10, 1400)},
+    {level = 375, name = "Gladiator", id = 14, position = Vector3.new(750, 10, 1500)},
+    {level = 450, name = "Military Soldier", id = 15, position = Vector3.new(800, 10, 1600)},
+    {level = 475, name = "Military Spy", id = 16, position = Vector3.new(850, 10, 1700)},
+    {level = 525, name = "Fishman Warrior", id = 17, position = Vector3.new(900, 10, 1800)},
+    {level = 550, name = "Fishman Commando", id = 18, position = Vector3.new(950, 10, 1900)},
+    {level = 625, name = "God's Guard", id = 19, position = Vector3.new(1000, 10, 2000)},
+    {level = 675, name = "Shanda", id = 20, position = Vector3.new(1050, 10, 2100)},
+    {level = 700, name = "Royal Squad", id = 21, position = Vector3.new(1100, 10, 2200)},
+    {level = 725, name = "Royal Soldier", id = 22, position = Vector3.new(1150, 10, 2300)},
+    {level = 775, name = "Galley Pirate", id = 23, position = Vector3.new(1200, 10, 2400)},
+    {level = 800, name = "Galley Captain", id = 24, position = Vector3.new(1250, 10, 2500)},
+    {level = 875, name = "Zombie", id = 25, position = Vector3.new(1300, 10, 2600)},
+    {level = 900, name = "Vampire", id = 26, position = Vector3.new(1350, 10, 2700)},
+    {level = 950, name = "Snow Lurker", id = 27, position = Vector3.new(1400, 10, 2800)},
+    {level = 975, name = "Winter Warrior", id = 28, position = Vector3.new(1450, 10, 2900)},
+    {level = 1000, name = "Lab Subordinate", id = 29, position = Vector3.new(1500, 10, 3000)},
+    {level = 2550, name = "Warlord", id = 50, position = Vector3.new(1550, 10, 3100)},
+    {level = 2600, name = "Beast Guardian", id = 51, position = Vector3.new(1600, 10, 3200)}
+}
+
+local bossesByLevel = {
+    {level = 200, name = "Saber Expert", id = 1, position = Vector3.new(300, 40, -500)},
+    {level = 350, name = "Shanks (Boss)", id = 2, position = Vector3.new(-1500, 80, 300)},
+    {level = 625, name = "Magma Admiral", id = 3, position = Vector3.new(-5300, 10, 8600)},
+    {level = 700, name = "Ice Admiral", id = 4, position = Vector3.new(6000, 80, -6500)},
+    {level = 1000, name = "Darkbeard", id = 5, position = Vector3.new(10000, 50, 5000)},
+    {level = 1500, name = "Rip Indra", id = 6, position = Vector3.new(12000, 100, -10000)},
+    {level = 1750, name = "Cake Queen", id = 7, position = Vector3.new(-9500, 60, 5000)},
+    {level = 1900, name = "Captain Elephant", id = 8, position = Vector3.new(8000, 20, -2000)},
+    {level = 2000, name = "Beautiful Pirate", id = 9, position = Vector3.new(8500, 50, 3000)},
+    {level = 2100, name = "Kilo Admiral", id = 10, position = Vector3.new(9000, 30, -4000)},
+    {level = 2200, name = "Stone", id = 11, position = Vector3.new(-4000, 50, 7000)},
+    {level = 2300, name = "Island Empress", id = 12, position = Vector3.new(-8500, 50, 10000)},
+    {level = 2400, name = "Cursed Captain", id = 13, position = Vector3.new(-6000, 80, -6000)},
+    {level = 2500, name = "Tide Keeper", id = 14, position = Vector3.new(-12000, 30, 2000)},
+    {level = 2600, name = "Soul Reaper", id = 15, position = Vector3.new(11000, 50, -9000)}
+}
+
+local quests = {
+    -- Sea 1
+    [1] = {npc = "Bandit Quest Giver", level = 1, enemies = {"Bandits"}, location = "Starter Island"},
+    [15] = {npc = "Adventurer", level = 15, enemies = {"Monkeys", "Gorillas", "Gorilla King"}, location = "Jungle"},
+    [30] = {npc = "Rich Man", level = 30, enemies = {"Pirates", "Brutes", "Bobby"}, location = "Pirate Village"},
+    [60] = {npc = "Desert Adventurer", level = 60, enemies = {"Desert Bandits", "Desert Officers"}, location = "Desert"},
+    [90] = {npc = "Frozen Adventurer", level = 90, enemies = {"Snow Bandits", "Snowmen", "Yeti"}, location = "Frozen Village"},
+    [120] = {npc = "Marine Recruiter", level = 120, enemies = {"Chief Petty Officers", "Vice Admiral"}, location = "Marine Fortress"},
+    [150] = {npc = "Sky Adventurer", level = 150, enemies = {"Sky Bandits", "Dark Masters"}, location = "Skylands"},
+    [190] = {npc = "Head Jailer", level = 190, enemies = {"Warden", "Chief Warden", "Swan"}, location = "Prison"},
+    [225] = {npc = "Gladiator", level = 225, enemies = {"Toga Warriors", "Gladiators"}, location = "Colosseum"},
+    [300] = {npc = "Magma Adventurer", level = 300, enemies = {"Military Soldiers", "Military Spies", "Magma Admiral"}, location = "Magma Village"},
+    [375] = {npc = "Fishman Adventurer", level = 375, enemies = {"Fishman Warriors", "Fishman Commandos", "Fishman Lord"}, location = "Underwater City"},
+    [625] = {npc = "Water Adventurer", level = 625, enemies = {"Galley Pirates", "Galley Captains", "Cyborg"}, location = "Fountain City"},
+    
+    -- Sea 2
+    [700] = {npc = "King Red Head", level = 700, enemies = {"Raiders", "Mercenaries", "Diamond"}, location = "Kingdom of Rose"},
+    [850] = {npc = "Jeremy", level = 850, enemies = {"Swan Pirates", "Jeremy"}, location = "Green Zone"},
+    [1000] = {npc = "Fajita", level = 1000, enemies = {"Marine Captains", "Marine Lieutenants", "Fajita"}, location = "Cafe"},
+    
+    -- Sea 3
+    [1500] = {npc = "Dragon Adventurer", level = 1500, enemies = {"Dragon Crew Warrior", "Dragon Crew Archer"}, location = "Hydra Island"},
+    [1675] = {npc = "Captain Elephant", level = 1675, enemies = {"Musketeer Pirates", "Captain Elephant"}, location = "Great Tree"},
+    [1800] = {npc = "Beautiful Pirate", level = 1800, enemies = {"Reborn Skeletons", "Beautiful Pirate"}, location = "Haunted Castle"},
+    [2000] = {npc = "Pride Leader", level = 2000, enemies = {"Kitsune Samurai", "Pride Leader"}, location = "Floating Turtle"},
+    [2250] = {npc = "Soul Reaper", level = 2250, enemies = {"Reaper Spirit", "Soul Reaper"}, location = "Cursed Ship"},
+    [2450] = {npc = "God Human Trainer", level = 2450, enemies = {"Eternal Guardians", "God Human Trainer"}, location = "Sea of Treats"},
+    [2600] = {npc = "Final Boss", level = 2600, enemies = {"Elite Pirates", "Final Boss"}, location = "New World"},
+}
+
+return quests
